@@ -1,14 +1,16 @@
 #include <stdio.h>
 #include<string.h>
 
-/*����n�����1��n��Ҫ����ʹ�ó˳�������ʹ���κ�if while for �Լ���Ŀ���㣬��ô����
+/*
+输入n，求和1到n，要求不能使用乘除法，不使用任何if while for 以及三目运算，怎么做？
 */
 
- int f(int n) 
+ int f(int n) //利用位运算来替代if 来表述跳出递归的条件
 {
 	n && (n += f(n - 1));
 	return n;
 }
+
 int main(void) 
 {
 	int n = 0;
